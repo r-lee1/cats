@@ -31,3 +31,8 @@ Run ```cats --help``` for a list of commands
 npm unlink
 ```
 
+
+### TODOs:
+- Input validation
+- Search by different fields
+- Implement database program, e.g. MongoDB
