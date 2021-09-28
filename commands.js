@@ -19,31 +19,31 @@ program
   });
 
 program
-  .command('find <name>')
+  .command('find <id>')
   .description('Find a cat')
-  .action((name) => {
-    findCat(name);
+  .action((id) => {
+    findCat(id);
   });
 
 program
-  .command('show')
+  .command('show cats')
   .description('List all the cats')
   .action(() => {
     showCats();
   });
 
 program
-  .command('update <name> <newName> <age> <color>')
+  .command('update <id> <name> <age> <color>')
   .description('Update information on existing cat')
-  .action((name, newName, age, color) => {
-    updateCat(name, newName, age, color);
+  .action((id, name, age, color) => {
+    updateCat(parseInt(id), name, parseInt(age), color);
   });
 
 program
-  .command('delete <name>')
+  .command('delete <id>')
   .description('Delete a cat from the database')
-  .action((name) => {
-    deleteCat(name);
+  .action((id) => {
+    deleteCat(parseInt(id));
   });
 
 program.parse(process.argv);

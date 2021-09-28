@@ -20,11 +20,24 @@ const showCats = () => {
   console.log(cats);
 };
 
+// Generate ID for new record
+const generateId = () => {
+  const cats = getCats();
+  if (cats.length === 0) {
+    return 1;
+  } else {
+    const lastId = cats[cats.length - 1].id;
+    return lastId + 1;  
+  }
+};
+
 // Add Cat
 const addCat = (name, age, color) => {
     const cats = getCats();
+    const id = generateId();
 
     cats.push({
+      id,
       name,
       age,
       color
@@ -41,11 +54,11 @@ const addCat = (name, age, color) => {
 };
 
 // Find a Cat
-const findCat = (cname) => {
+const findCat = (cid) => {
     const cats = getCats();
-    const cat = cats.find(({name}) => name === cname);
+    const cat = cats.find(({id}) => id === cid);
     if (cat === undefined) {
-      console.log(`No cat with the name ${cname} exists`);
+      console.log(`No cat with the id ${cid} exists`);
       return;
     } else {
       console.log(cat);
@@ -54,14 +67,14 @@ const findCat = (cname) => {
 };
 
 // Update a Cat
-const updateCat = (cname, newName, age, color) => {
+const updateCat = (cid, name, age, color) => {
   const cats = getCats();
-  const catIdx = cats.findIndex(({name}) => name === cname);
+  const catIdx = cats.findIndex(({id}) => id === cid);
   if (catIdx === -1) {
-    console.log(`No cat with the name ${cname} exists`);
+    console.log(`No cat with the id ${cid} exists`);
     return;
   } else {
-    cats[catIdx].name = newName;
+    cats[catIdx].name = name;
     cats[catIdx].age = age;
     cats[catIdx].color = color;
   }
@@ -76,11 +89,11 @@ const updateCat = (cname, newName, age, color) => {
 };
 
 // Delete a cat
-const deleteCat = (cname) => {
+const deleteCat = (cid) => {
   const cats = getCats();
-  const catIdx = cats.findIndex(({name}) => name === cname);
+  const catIdx = cats.findIndex(({id}) => id === cid);
   if (catIdx === -1) {
-    console.log(`No cat with the name ${cname} exists`);
+    console.log(`No cat with the id ${cid} exists`);
     return;
   } else {
     cats.splice(catIdx,1);
