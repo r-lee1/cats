@@ -2,7 +2,9 @@ const program = require('commander');
 const {
   addCat,
   findCat,
-  showCats
+  showCats,
+  updateCat,
+  deleteCat
 } = require('./index');
 
 program
@@ -28,6 +30,20 @@ program
   .description('List all the cats')
   .action(() => {
     showCats();
+  });
+
+program
+  .command('update <name> <newName> <age> <color>')
+  .description('Update information on existing cat')
+  .action((name, newName, age, color) => {
+    updateCat(name, newName, age, color);
+  });
+
+program
+  .command('delete <name>')
+  .description('Delete a cat from the database')
+  .action((name) => {
+    deleteCat(name);
   });
 
 program.parse(process.argv);
