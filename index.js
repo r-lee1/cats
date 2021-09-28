@@ -1,4 +1,6 @@
 const fs = require('fs');
+//TODO: Implement database program, e.g, MongoDB
+
 
 // Fetch all cats
 const getCats = () => {
@@ -32,6 +34,7 @@ const generateId = () => {
 };
 
 // Add Cat
+// TODO: Input validation
 const addCat = (name, age, color) => {
     const cats = getCats();
     const id = generateId();
@@ -53,6 +56,7 @@ const addCat = (name, age, color) => {
 };
 
 // Find a Cat
+// TODO: Search by different fields
 const findCat = (cid) => {
     const cats = getCats();
     const cat = cats.find(({id}) => id === cid);
