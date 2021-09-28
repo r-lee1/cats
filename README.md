@@ -1,11 +1,38 @@
 # cats
 
-Challenge: Create a simple CLI in your language of choice.
+### How to Install:
 
-Scenario: You have been hired to create a new Command-Line Interface, cats. The cats CLI should handle a resource, cats, with commands for create, read, update, and delete.
+#### Clone git repository:
+```shell
+git clone https://github.com/r-lee1/cats.git
+```
 
-Task 1: CRUD commands
-add commands for Create, Read, Update, and Delete. The data storage can be mocked here, or you can choose to persist the data if you so choose
+#### Go into cats folder:
+```shell
+cd cats
+```
+#### Run npm install:
+```shell
+npm install
+```
 
-Task 2: Arguments
-For create and update, add a relevant argument to be parsed by the CLI. For example, you could end up with cats create --name Sardine
+#### Create symlink:
+```shell
+npm link
+```
+
+### Commands: 
+Run ```cats --help``` for a list of commands
+
+### Remove CLI:
+
+#### Remove symlink:
+```shell
+npm unlink
+```
+
+
+### TODOs:
+- Input validation
+- Search by different fields
+- Implement database program, e.g. MongoDB
