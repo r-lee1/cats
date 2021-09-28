@@ -23,3 +23,11 @@ npm link
 
 ### Commands: 
 Run ```cats --help``` for a list of commands
+
+### Remove CLI:
+
+#### Remove symlink:
+```shell
+npm unlink
+```
+
