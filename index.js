@@ -27,7 +27,7 @@ const generateId = () => {
     return 1;
   } else {
     const lastId = cats[cats.length - 1].id;
-    return lastId + 1;  
+    return lastId + 1;
   }
 };
 
@@ -48,7 +48,6 @@ const addCat = (name, age, color) => {
         console.log('Error writing file', err);
       } else {
         console.log('Successfully added record');
-        showCats();
       }
     });
 };
@@ -62,7 +61,6 @@ const findCat = (cid) => {
       return;
     } else {
       console.log(cat);
-      return cat;
     }
 };
 

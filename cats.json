@@ -10,5 +10,17 @@
         "name": "ginny",
         "age": 2,
         "color": "orange"
+    },
+    {
+        "id": 4,
+        "name": "spotty",
+        "age": 5,
+        "color": "black"
+    },
+    {
+        "id": 5,
+        "name": "jack",
+        "age": 5,
+        "color": "brown"
     }
 ]

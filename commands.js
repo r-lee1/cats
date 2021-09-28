@@ -1,3 +1,5 @@
+#!/usr/bin/env node
+
 const program = require('commander');
 const {
   addCat,
@@ -22,11 +24,11 @@ program
   .command('find <id>')
   .description('Find a cat')
   .action((id) => {
-    findCat(id);
+    findCat(parseInt(id));
   });
 
 program
-  .command('show cats')
+  .command('list')
   .description('List all the cats')
   .action(() => {
     showCats();
